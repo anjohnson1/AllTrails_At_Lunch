@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Requires .env File
+REACT_APP_GOOGLE_PLACES=<YOUR_API_KEY>
+
+## Notes
+- Focused mostly on UI
+- There are 2 views: General Full Screen Desktop and Mobile
+-- Mobile View starts at 600px width
+- Icon assets are from FontAwesome to save time as they were not included in the project files
+
+## What I Would Have Done Differently
+- Ideally would have had time independently learning the Google Maps API as this was my first time using it. Some maps functionality is left out.
+
 ## Available Scripts
 
 In the project directory, you can run:
