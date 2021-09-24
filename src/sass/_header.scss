@@ -1,0 +1,215 @@
+@-webkit-keyframes slide { from {top: 44px} to { top: 54px; } }
+@-moz-keyframes slide { from {top: 44px} to { top: 54px } }
+@keyframes slide { from {top: 44px} to { top: 54px } }
+
+@-webkit-keyframes slideMobile { from {top: 141px} to { top: 151px; } }
+@-moz-keyframes slideMobile { from {top: 141px} to { top: 151px } }
+@keyframes slideMobile { from {top: 141px} to { top: 151px } }
+
+@-webkit-keyframes fadeIn { from {opacity: 0} to { opacity: 1; } }
+@-moz-keyframes fadeIn { from {opacity: 0} to { opacity: 1; } }
+@keyframes fadeIn { from {opacity: 0} to { opacity: 1; } }
+
+.headerContainer {
+    align-items: center;
+    background-color: $WHITE;
+    box-shadow:  0 5px 5px -2px $TRANSPARENT_LIGHT;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 60px;
+    z-index: 3;
+
+    #filterPopup {
+        background-color: $COLOR_POPUP_BACKGROUND;
+        bottom: 0;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+
+        -webkit-animation: fadeIn 0.25s ease-in forwards 1;
+        -moz-animation: fadeIn 0.25s ease-in forwards 1;
+        animation: fadeIn 0.25s ease-in forwards 1;
+
+        .content {
+            align-items: flex-start;
+            background-color: $WHITE;
+            border: 1px solid $COLOR_BORDER_PRIMARY;
+            border-radius: 6px;
+            box-shadow:  0 5px 5px -2px $TRANSPARENT_LIGHT;
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            height: 75px;
+            padding: 15px 10px;
+            position: absolute;
+            right: 342px;
+            top: 44px;
+            width: 192px;
+            
+            -webkit-animation: slide 0.35s ease-in forwards 1;
+            -moz-animation: slide 0.35s ease-in forwards 1;
+            animation: slide 0.35s ease-in forwards 1;
+
+            div {
+                align-items: center; 
+                display: flex;
+                justify-content: flex-start;
+            
+                &:nth-child(2) {
+                    margin-top: 10px;
+                }
+            }
+
+            .circle,
+            .popupSelection {
+                cursor: pointer;
+            }
+
+            .circle {
+                font-size: 18px;
+                margin-right: 8px;
+
+                &.active {
+                    color:$GREEN;
+                }
+
+                &.inactive {
+                    color:#cdcdcd;
+                }
+            }
+
+            .popupSelection {
+                bottom: 15px;
+                color: $GREEN;
+                font-weight: bold;
+                position: absolute;
+                right: 10px;
+            }
+
+        }
+    }
+
+    #logo {
+        margin: 6px 0 0 34px;
+        
+        img {
+            height: 35px;
+        }
+    }
+
+    #searchContainer {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        flex-grow: 1;
+        justify-content: flex-end;
+        margin-right: 24px;
+
+        input {
+            border: 1px solid $COLOR_BORDER_PRIMARY;
+            border-radius: 6px;
+            height: 32px;
+            font-size: 12px;
+            -webkit-appearance: none;
+        }
+
+        #searchIcon {
+            align-items: center;
+            color: $GREEN;
+            display: flex;
+            height: 100%;
+            position: absolute;
+            right: 15px;
+            top: 0;
+            width: auto;
+        }
+
+        #filter {
+            cursor: pointer;
+            margin-right: 16px;
+            position: relative;
+            width: 52px;
+
+            &.active {
+                background-color: $GREEN;
+                color: $WHITE;
+            }
+
+            &.inactive {
+                background-color: $WHITE;
+            }
+        }
+
+        .searchBarContainer {
+            position: relative;
+
+            .searchBar {
+                box-shadow:  0 2px 6px -4px $TRANSPARENT_MEDIUM;
+                padding: 0 34px 0 15px;
+                width: 302px;
+    
+                &::placeholder {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        height: 150px;
+        justify-content: flex-end;
+        padding: env(safe-area-inset-top) 0 0 0;
+
+        #filterPopup {
+            .content {
+                border: 0;
+                border-radius: 0;
+                left: 0;
+                top: 141px;
+                width: -moz-available;
+                width: -webkit-fill-available;
+                width: stretch;
+
+                -webkit-animation: slideMobile 0.35s ease-in forwards 1;
+                -moz-animation: slideMobile 0.35s ease-in forwards 1;
+                animation: slideMobile 0.35s ease-in forwards 1;
+            }
+        }
+
+        #logo {
+            margin: 0;
+            height: 25px;
+
+            img {
+                height: 30px;
+            }
+        }
+
+        #searchContainer {
+            flex-grow: unset;
+            justify-content: center;
+            margin: 20px 0 15px 0;
+            width: 90%;
+
+            #filter {
+                margin-right: 10px;
+                color: $COLOR_TEXT;
+            }
+            
+            .searchBarContainer {
+                flex-grow: 1;
+
+                .searchBar {
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,184 @@
+.AllTrailsLunch {
+    align-items: center;
+    background-color: $COLOR_PAGE_CONTAINER;
+    color: $COLOR_TEXT;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    width: 100vw;
+
+    .mainContainer {
+        background-color: $COLOR_MAIN_CONTAINER;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 1024px;
+
+        .contentContainer {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow-y: hidden;
+            position: relative;
+        
+            .listContainer {
+                padding: 25px 25px 0 25px;
+                text-align: center;
+                width: 302px;
+    
+                .restaurantItemContainer {
+                    align-items: center;
+                    background-color: $TRANSPARENT;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    display: flex;
+                    height: 95px;
+                    justify-content: center;
+                    margin-bottom: 7px;
+                    width: 100%;
+    
+                    &:hover {
+                        background-color: $GREEN;
+                        .item {
+                            border-color: $TRANSPARENT;
+                        }
+                    }
+    
+                    .item {
+                        background-color: $WHITE;
+                        border: 1px solid $COLOR_BORDER_PRIMARY;
+                        border-radius: 6px;
+                        height: calc(100% - 6px);
+                        text-align: left;
+                        width: calc(100% - 6px);
+    
+                        .content {
+                            align-items: center;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            padding: 14px;
+                            position: relative;
+    
+                            div {
+                                margin-bottom: 5px;
+                            }
+    
+                            .restaurantImage {
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                flex-shrink: 0;
+                                height: 64px;
+                                width: 64px;
+                            }
+    
+                            .restaurantInfo {
+                                align-items: flex-start;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                margin-left: 16px;
+                                overflow: hidden;
+    
+                                .name {
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    width: 90%;
+                                }
+    
+                                .rating {
+                                    .star {
+                                        font-size: 12px;
+                                        margin-right: 2px;
+                                    }
+    
+                                    .active {
+                                        color: #f0cf4d;
+                                    }
+    
+                                    span {
+                                        font-size: 11px;
+                                        margin-left: 8px;
+                                    }
+                                }
+    
+                                .priceSupport {
+                                    font-size: 11px;
+                                }
+    
+                                .favorite {
+                                    font-size: 22px;
+                                    position: absolute;
+                                    right: 15px;
+                                    top: 10px;
+    
+                                    .active {
+                                        color: $GREEN;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .mapContainer {
+                background-color: green;
+                flex-grow: 1;
+            }
+    
+            .mobileViewToggle {
+                align-items: center;
+                background-color: $GREEN;
+                border-radius: 6px;
+                bottom: 50px;
+                box-shadow:  0 2px 6px -1px $TRANSPARENT_DARK;
+                color: $WHITE;
+                cursor: pointer;
+                display: none;
+                height: 42px;
+                justify-content: center;
+                font-size: 16px;
+                font-weight: bold;
+                position: absolute;
+                margin: 0 auto;
+                width: 100px;
+    
+                span {
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        overflow: hidden;
+        width: 100%;
+
+        .mainContainer {
+            overflow: hidden;
+            width: 100%;
+
+            .contentContainer {
+                justify-content: center;
+
+                .mobileViewToggle {
+                    display: flex;
+                }
+
+                .restaurantItemContainer:last-child {
+                    margin-bottom: 100px;
+                }
+            }
+        }
+    }
+}
