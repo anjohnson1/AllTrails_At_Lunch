@@ -2,8 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Requires .env File
+## Requires .env or .env.local File
 REACT_APP_GOOGLE_PLACES=<YOUR_API_KEY>
+
+## 3rd Party Libraries
+- use-places-autocomplete
+- @react-google-maps/api
+- @fortawesome/react-fontawesome
+- @fortawesome/free-solid-svg-icons
+- @fortawesome/free-regular-svg-icons
+- react-indiana-drag-scroll
 
 ## Notes
 - Focused mostly on UI
@@ -13,6 +21,7 @@ REACT_APP_GOOGLE_PLACES=<YOUR_API_KEY>
 
 ## What I Would Have Done Differently
 - Ideally would have had time independently learning the Google Maps API as this was my first time using it. Some maps functionality is left out.
+- Better transitions from List to Map views in mobile
 
 ## Available Scripts
 
